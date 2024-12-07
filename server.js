@@ -8,6 +8,7 @@ const port = 8080;
 
 const authRoute = require("./routes/auth.route.js");
 const trainRoute = require("./routes/train.route.js");
+const bookingRoute = require("./routes/booking.route.js");
 const { authenticateUser } = require("./middlewares/authonticateUser.js");
 
 const cors = require("cors");
@@ -25,6 +26,7 @@ require("dotenv").config();
 
 app.use("/api/auth", authRoute);
 app.use("/api/train", trainRoute);
+app.use("/api/booking", bookingRoute);
 
 app.get("/", authenticateUser, async (req, res) => {
   try {
