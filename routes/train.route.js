@@ -1,9 +1,12 @@
 const express = require("express");
-const { addNewtrainController } = require("../controllers/train.controller");
+const {
+  addNewtrainController,
+  checkSeatAvailabilityController,
+} = require("../controllers/train.controller");
 const router = express.Router();
 
 router.post("/add", addNewtrainController);
 
-router.get("/check");
+router.get("/check", checkSeatAvailabilityController);
 
 module.exports = router;
